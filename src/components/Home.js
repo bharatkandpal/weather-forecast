@@ -1,5 +1,5 @@
-import React, { useState,useEffect } from 'react'
-import {GetDayWise} from './GetWeather'
+import React, { useState, useEffect } from 'react'
+import { GetDayWise } from './GetWeather'
 
 const Home = () => {
     const [Delhi, setDelhi] = useState({})
@@ -17,9 +17,9 @@ const Home = () => {
         setKolkata(WeatherKolkata)
         console.log(Delhi);
     }
-    useEffect(()=>{
+    useEffect(() => {
         Weatherdata();
-    },[])
+    }, [])
     return (
         <div>
             <div id="carousel-main" className="carousel slide main-area font-lg" data-bs-ride="false">
@@ -32,7 +32,7 @@ const Home = () => {
                 </ol>
                 <div className="carousel-inner">
                     <div className="carousel-item active">
-                        {Delhi.main && ( 
+                        {Delhi.main && (
                             <div className="w-block">
                                 <h2>{Delhi.main.temp}
                                     <sup>o</sup>
@@ -46,7 +46,7 @@ const Home = () => {
                         )}
                     </div>
                     <div className="carousel-item">
-                    {Bengaluru.main && ( 
+                        {Bengaluru.main && (
                             <div className="w-block">
                                 <h2>{Bengaluru.main.temp}
                                     <sup>o</sup>
@@ -60,7 +60,7 @@ const Home = () => {
                         )}
                     </div>
                     <div className="carousel-item">
-                    {Kolkata.main && ( 
+                        {Kolkata.main && (
                             <div className="w-block">
                                 <h2>{Kolkata.main.temp}
                                     <sup>o</sup>
@@ -74,7 +74,7 @@ const Home = () => {
                         )}
                     </div>
                     <div className="carousel-item">
-                    {Mumbai.main && ( 
+                        {Mumbai.main && (
                             <div className="w-block">
                                 <h2>{Mumbai.main.temp}
                                     <sup>o</sup>

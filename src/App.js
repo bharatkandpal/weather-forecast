@@ -1,20 +1,18 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { BrowserRouter as Router, Switch, Link, Route } from 'react-router-dom'
-import Daycast from './components/Daycast'
 import Forecast from './components/Forecast'
 import Home from "./components/Home";
 
 const App = () => {
 
-  const [day, setDay] = useState({})
-  const [city, setCity] = useState('')
+
 
   //const iconurl = 'https://openweathermap.org/img/wn/'+`${weather.weather[0].icon}`+'@2x.png'
   return (
     <Router>
       <nav className="navbar navbar-expand-lg navbar-light">
         <div className="container-fluid">
-          <Link to='/home' className="navbar-brand font-header">
+          <Link to='/' className="navbar-brand font-header">
             <img className="d-inline-block align-text-top" src={'https://openweathermap.org/img/wn/02d@2x.png'} width="50" height="40" alt="" />
             <strong> Weather</strong>
           </Link>
@@ -23,26 +21,31 @@ const App = () => {
               <li className="nav-item">
                 <Link to='/forecast' className="nav-link font-lg">5-Day Forecast</Link>
               </li>
-              <li className="nav-item">
-                <Link to='/daycast' className="nav-link font-lg">Detailed Forecast</Link>
-              </li>
+              
             </ul>
           </div>
         </div>
       </nav>
+      <PageFooter/>
       <Switch>
-        <Route path="/Home" >
-          <Home />
+        <Route exact path="/" >
+          <Home/>
+          </Route>
+        <Route  path="/Forecast">
+          <Forecast />
         </Route>
-        <Route exact path="/Forecast">
-          <Forecast setDay={setDay} setCity={setCity} />
-        </Route>
-        <Route path="/Daycast">
-          <Daycast day={day} city={city} />
-        </Route>
+        
       </Switch>
     </Router>
   );
+}
+const PageFooter=()=>{
+  return (
+    <div className="footer">
+      <div><a href="mailto:kandpalbharat83@gmail.com" className="footer-w">Bharat Kandpal</a></div>
+      <div>Contact: 8191960391</div>
+    </div>
+  )
 }
 
 export default App;

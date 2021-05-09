@@ -1,10 +1,25 @@
 import React, { useState } from 'react'
 import { GetWeather } from './GetWeather.js'
+import { withRouter } from 'react-router-dom'
+import Daycast from './Daycast'
 
+const Forecast = () => {
+    const [active, setActive] = useState("forecast")
+    const [day, setDay] = useState({})
+    const [city, setCity] = useState('')
+    return (
+        <div>
+            {active === "forecast" && <FiveDayCast setDay={setDay} setCity={setCity} setActive={setActive}/>}
+            {active === "daycast" && <Daycast day={day} city={city}/>}
+        </div>
+    )
+}
 
-const Forecast = ({ setDay, setCity }) => {
+const FiveDayCast = ({ setDay, setCity, setActive }) => {
+
     const [query, setQuery] = useState('')
     const [weather, setWeather] = useState({})
+
 
     const Search = async (e) => {
         if (e.key === 'Enter') {
@@ -13,6 +28,12 @@ const Forecast = ({ setDay, setCity }) => {
             setCity(e.target.value)
 
         }
+    }
+    const cardClicked = (e, item) => {
+        console.log(e);
+        console.log(item);
+        setDay(item)
+        setActive("daycast")
     }
 
     return (
@@ -25,7 +46,7 @@ const Forecast = ({ setDay, setCity }) => {
                 <div className="row mb-3 text-center main-area">
                     {weather.list && weather.list.filter((item) => item.dt_txt.split(' ')[1] === '00:00:00').map((item) => (
 
-                        <div className="card col-lg-2 col-md-3 col-sm-6" onClick={setDay(item)}>
+                        <div className="card col-lg-2 col-md-3 col-sm-6" onClick={(e) => cardClicked(e, item)}>
                             <div className="card-header" >
                                 <h3>
                                     {item.dt_txt.split(' ')[0]}
@@ -48,8 +69,10 @@ const Forecast = ({ setDay, setCity }) => {
                                 </div>
                             </div>
                             <div className="card-footer">
-                                <h2><span>{weather.city.name},</span>
-                                    {weather.city.country}</h2>
+                                <h2>
+                                    <span>{weather.city.name},</span>
+                                    {weather.city.country}
+                                </h2>
                             </div>
                         </div>
 
@@ -58,7 +81,8 @@ const Forecast = ({ setDay, setCity }) => {
                 </div>
             </main>
         </>
+
     )
 }
 
-export default Forecast
+export default withRouter(Forecast)

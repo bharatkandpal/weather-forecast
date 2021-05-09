@@ -7,10 +7,10 @@ const Daycast = ({ day, city }) => {
             <div className="box font-lg">
 
                 <div className="row">
-                    <div className="card card-custom col-5" >
+                    <div className="card card-custom col-md-5" >
                         <div className="card-header" >
                             <h3>
-                                {day.dt_txt.split(' ')[0]},{city}
+                                {city}
 
                             </h3>
                             <div>
@@ -30,35 +30,36 @@ const Daycast = ({ day, city }) => {
                             </div>
                         </div>
                         <div className="card-footer">
-                            <h2><span>{day.main.humidity}|
-                     {day.main.pressure}</span>
+                            <h2><span>{day.dt_txt.split(' ')[0]}</span>
                             </h2>
                         </div>
                     </div>
-                    <div className="card card-custom col-5">
+                    <div className="card card-custom col-md-5">
                         <div className="card-header">
                             Detailed Weather
                         </div>
-                        <div className="card-body">
+                        <div className="card-body card-detail">
                             <div className="row">
                                 <div className="col-6">
                                     <h2>Temprature: </h2>
                                 </div>
                                 <div className="col-6">
                                     {day.main.temp}
+                                    <sup>o</sup>
                                 </div>
                             </div>
                             <div className="row">
                                 <div className="col-6">
-                                    <h2>Temprature: </h2>
+                                    <h2>Feels Like: </h2>
                                 </div>
                                 <div className="col-6">
-                                    {day.main.temp}
+                                    {day.main.feels_like}
+                                    <sup>o</sup>
                                 </div>
                             </div>
                             <div className="row">
                                 <div className="col-6">
-                                    <h2>humidity: </h2>
+                                    <h2>Humidity: </h2>
                                 </div>
                                 <div className="col-6">
                                     {day.main.humidity}
@@ -66,10 +67,18 @@ const Daycast = ({ day, city }) => {
                             </div>
                             <div className="row">
                                 <div className="col-6">
-                                    <h2>pressure: </h2>
+                                    <h2>Pressure: </h2>
                                 </div>
                                 <div className="col-6">
                                     {day.main.pressure}
+                                </div>
+                            </div>
+                            <div className="row">
+                                <div className="col-6">
+                                    <h2>Wind: </h2>
+                                </div>
+                                <div className="col-6">
+                                    {day.wind.speed}Km/h
                                 </div>
                             </div>
                         </div>

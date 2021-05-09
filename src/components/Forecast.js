@@ -11,7 +11,6 @@ const Forecast = ({ setDay, setCity }) => {
             const data = await GetWeather(query)
             setWeather(data)
             setCity(e.target.value)
-            //setQuery('')
 
         }
     }

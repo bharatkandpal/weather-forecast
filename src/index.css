@@ -1,53 +1,63 @@
-body{
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 100;
-  text-align: center;
-  background-image: url("./app-bg.jpeg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center; 
-  }
-  .card{
-    border-radius: 8px;
-    background: #fff;
-    box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
-      transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
-    cursor: pointer;
-    margin: 0 20px 0 10px;
-  }
-  .card:hover{
-    transform: scale(1.1);
-    box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
-  }
-  .city-icon{
-    transform: scale(1.4);
-  }
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+    text-align: center;
+    background-image: url("./app-bg.jpeg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
 
- 
- .search-box {
-    top: 40%;
+.card {
+    color: #fff;
+    border-radius: 10px;
+    background: rgba(17, 51, 66, 0.829);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, .08), 0 0 6px rgba(0, 0, 0, .05);
+    transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
+    cursor: pointer;
+    margin: 2% 0 0 3%;
+}
+
+.card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
+}
+
+.city-icon {
+    transform: scale(1.4);
+}
+
+.main-area {
     position: absolute;
+    width: 100%;
+    top: 20%;
+}
+
+.search-box {
+    top: 20px;
+    position: fixed;
     width: 60%;
     border-radius: 20px 20px;
-    text-transform: capitalize;
+    text-transform: uppercase;
     font-weight: bold;
-    transform: translateX(30%);
+    transform: translateX(60%);
 }
 
-nav{
-  background-image:linear-gradient(10deg, rgba(65, 172, 235, 0.726), transparent);
-  font-size: 2rem;
+nav {
+    background-image: linear-gradient(10deg, rgba(65, 172, 235, 0.726), transparent);
+    font-size: 2rem;
 }
 
-.font-header{
-  font-size: 2rem;
-  font-weight: bold;
-  color: black;
-  text-shadow: 2px 1px white;
+.font-header {
+    font-size: 2rem;
+    font-weight: bold;
+    color: black;
+    text-shadow: 2px 1px white;
 }
-.font-lg{
-  font-size: 1.5rem;
-  color: black !IMPORTANT;
-  font-weight: bold;
-  margin: 0 0 0 10px;
+
+.font-lg {
+    font-size: 1.5rem;
+    color: black !IMPORTANT;
+    font-weight: bold;
+    margin: 0 0 0 10px;
 }

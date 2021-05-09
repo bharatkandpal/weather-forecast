@@ -6,25 +6,26 @@ import Forecast from './components/Forecast'
 const App = () => {
 
   const [day,setDay]=useState({})
+  const [city,setCity] = useState('')
 
   //const iconurl = 'https://openweathermap.org/img/wn/'+`${weather.weather[0].icon}`+'@2x.png'
   return (
     <Router>
-      <nav class="navbar navbar-expand-lg navbar-light">
+      <nav className="navbar navbar-expand-lg navbar-light">
         <div className="container-fluid">
-          <Link to='/' className="navbar-brand font-header">
+          <Link to='/forecast' className="navbar-brand font-header">
           <img className="d-inline-block align-text-top" src={'https://openweathermap.org/img/wn/02d@2x.png'} width="50" height="40" alt=""/>
            <strong> Weather</strong>
             </Link>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
+          {/* <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
+          </button> */}
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+              <li className="nav-item">
                 <Link to='/forecast' className="nav-link font-lg">Forecast</Link>
               </li>
-              <li class="nav-item">
+              <li className="nav-item">
                 <Link to='/daycast' className="nav-link font-lg">Daycast</Link>
               </li>
             </ul>
@@ -34,10 +35,10 @@ const App = () => {
       <Switch>
         <Route exact path="/" />
         <Route path="/Forecast">
-          <Forecast setDay={setDay}/>
+          <Forecast setDay={setDay} setCity={setCity}/>
         </Route>
         <Route path="/Daycast">
-          <Daycast day={day}/>
+          <Daycast day={day} city={city}/>
         </Route>
       </Switch>
     </Router>

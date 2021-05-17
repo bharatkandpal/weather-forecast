@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Switch, Link, Route } from 'react-router-dom'
+import { BrowserRouter, Switch, Link, Route, HashRouter as Router } from 'react-router-dom'
 import Forecast from './components/Forecast'
 import Home from "./components/Home";
 
@@ -16,6 +16,9 @@ const App = () => {
             <img className="d-inline-block align-text-top" src={'https://openweathermap.org/img/wn/02d@2x.png'} width="50" height="40" alt="" />
             <strong> Weather</strong>
           </Link>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">

@@ -1,7 +1,7 @@
 import axios from 'axios'
 
-const URL_FORECAST = 'http://api.openweathermap.org/data/2.5/forecast'
-const URL_DETAIL = 'http://api.openweathermap.org/data/2.5/weather'
+const URL_FORECAST = 'https://api.openweathermap.org/data/2.5/forecast'
+const URL_DETAIL = 'https://api.openweathermap.org/data/2.5/weather'
 //key->f42dc105cd0c9ddeab9066c3fcaf37a9
 const api_key ='f42dc105cd0c9ddeab9066c3fcaf37a9'
 const GetWeather = async(query) => {
@@ -22,7 +22,6 @@ const GetDayWise = async(query) => {
             APPID: api_key,
         }
     })
-    console.log(data);
     return data
 }
 

@@ -15,7 +15,6 @@ const Home = () => {
         setBengaluru(WeatherBengaluru)
         const WeatherKolkata = await GetDayWise('kolkata')
         setKolkata(WeatherKolkata)
-        console.log(Delhi);
     }
     useEffect(() => {
         Weatherdata();

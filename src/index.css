@@ -11,7 +11,7 @@ body {
 .card {
     color: #fff;
     border-radius: 10px;
-    background: rgba(17, 51, 66, 0.829);
+    background: rgba(17, 51, 66, 0.729);
     box-shadow: 0 6px 10px rgba(0, 0, 0, .08), 0 0 6px rgba(0, 0, 0, .05);
     transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
     cursor: pointer;
@@ -23,7 +23,8 @@ body {
 }
 
 .card:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
+    background: rgba(17, 51, 66, 0.95);
     box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
 }
 
@@ -41,13 +42,12 @@ body {
 }
 
 .search-box {
-    top: 20px;
-    position: fixed;
+    
     width: 60%;
     border-radius: 20px 20px;
     text-transform: uppercase;
     font-weight: bold;
-    transform: translateX(60%);
+    transform: translate(30%,50%);
 }
 
 nav {
@@ -83,12 +83,12 @@ nav {
 }
 
 .footer {
-    font-size: 0.8rem;
+    font-size: 0.6rem;
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
-    background-image: linear-gradient(transparent, rgba(2, 21, 26, 0.801));
+    background-image: rgba(2, 21, 26, 0.801);
     color: white;
     text-align: center;
 }
@@ -96,3 +96,4 @@ nav {
 .footer-w {
     color: white;
 }
+
